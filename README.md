@@ -28,7 +28,7 @@ insert into medalha (tipo, descricao, peso, fabricacao, sede, url_foto) values('
 insert into medalha (tipo, descricao, peso, fabricacao, sede, url_foto) values('bronze','desc medalha de bronze','600','2016','Rio','www.google.com/medalhadeBronze');
 ```
 
-A figura a seguir mostra a estrutura de diretórios e arquivos que precisaremos criar.
+A figura a seguir mostra a estrutura de diretórios e arquivos que precisaremos *criar.*
 ![Image Teste 01](https://github.com/franknfjr/junit/blob/master/src/img/01.PNG)
 
 * Nessa parte iremos tentar fazer a conexão com o banco, pra isso abra o arquivo `BaseDAO` e digite:
@@ -57,14 +57,16 @@ public class BaseDAO {
 }
 ```
 Quando executarmos o codigo anterior a janela saida do NetBeans informará um erro, pois o
-drive JDBC do MySQL ainda não foi adicionado ao `classpath` do projeto.
+drive JDBC do MySQL ainda não foi adicionado ao `classpath` do *projeto.*
+
 ![Image Teste 02](https://github.com/franknfjr/junit/blob/master/src/img/02.PNG)
 
 Para isso iremos na pasta de `Bibliotecas`>`Adicionar JAR/Pastas...` e adicionar o mysql-connector-java.jar
 que pode ser facilmente encontrado no [Google!](http://google.com)
 
 Com o driver JDBC do MySQL corretamente configurado execute o arquivo `BaseDAO` novamente e a saída retornará
-com sucesso.
+*com sucesso.*
+
 ![Image Teste 03](https://github.com/franknfjr/junit/blob/master/src/img/03.PNG)
 
 ## Persistindo a classe Dominio do problema: Medalha
@@ -371,7 +373,8 @@ unitário com o JUnit afim de verificar se realmente esta tudo ok.
 
 Iremos novamente acessar o diretorio Bibliotecas no NetBeans, então vá em: `Bibliotecas`>`Adicionar Bibliotecas...` e procure pelo pacote JUnit.
 
-Feito isso, clique no diretorio domain com o lado direito do mouse, `Novo`>`Outros`>`Testes de Unidades`>`Teste JUnit` e depois em próximo, e altere os fields igual os da imagem a seguir:
+Feito isso, clique no diretorio domain com o lado direito do mouse, `Novo`>`Outros`>`Testes de Unidades`>`Teste JUnit` e depois em próximo, e altere os fields igual os da imagem *a seguir:*
+
 ![Image Teste 04](https://github.com/franknfjr/junit/blob/master/src/img/04.PNG)
 
 Apague todos os códigos automatico caso gere algum, e no primeiro teste, iremos listar todas as medalhas e comparar se existe no banco. Modifique o arquivo `MedalhaTest` no pacote `test`.
@@ -398,7 +401,8 @@ public class MedalhaTest extends TestCase {
 
 }
 ```
-Ao executar a classe `MedalhaTest` teremos o seguinte resultado:
+Ao executar a classe `MedalhaTest` teremos o *seguinte resultado:*
+
 ![Image Teste 05](https://github.com/franknfjr/junit/blob/master/src/img/05.PNG)
 
 Como dito no inicio, iremos fazer mais um teste, que irá testar a inserção, consulta, atualização e exclusão de uma medalha, essa ação é conhecida como CRUD(Create, Read, Update e Delete). Vamos adicinar o método `testSalvarDeletarMedalhaDeLata` na classe `MedalhaTest`.
@@ -448,5 +452,6 @@ public class MedalhaTest extends TestCase {
 
 }
 ```
-Execute o teste mais uma vez e...
+Execute o teste mais uma vez *e...*
+
 ![Image Teste 06](https://github.com/franknfjr/junit/blob/master/src/img/06.PNG)
