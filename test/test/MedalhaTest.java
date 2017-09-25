@@ -5,10 +5,13 @@
  */
 package test;
 
+import br.edu.ufra.domain.BaseDAO;
 import br.edu.ufra.domain.Medalha;
 import br.edu.ufra.domain.MedalhaDelegate;
+import java.sql.Connection;
 import java.util.List;
 import junit.framework.TestCase;
+import org.junit.AfterClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -19,7 +22,7 @@ import static org.junit.Assert.*;
 public class MedalhaTest extends TestCase {
     
     private MedalhaDelegate medalhasDelegate = new MedalhaDelegate();
-    
+    @Test
     public void testeListaMedalhas(){
         List<Medalha> medalhas = medalhasDelegate.getMedalhas();
         assertNotNull(medalhas);
@@ -36,6 +39,7 @@ public class MedalhaTest extends TestCase {
         assertEquals("bronze", bronze.getTipo());
     }
     
+    @AfterClass
     public void testSalvarDeletarMedalhaDeLata(){
 		Medalha m = new Medalha();
 		m.setTipo("Lata");
@@ -69,4 +73,5 @@ public class MedalhaTest extends TestCase {
 		// Desta vez a medalha não existe mais.
 		assertNull(m);
 	}
+    
 }
